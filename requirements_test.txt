@@ -1,0 +1,8 @@
+pytest
+pytest-asyncio
+# aioresponses 0.7.9 (latest) doesn't support aiohttp's ClientResponse
+# signature from 3.11+ (new required stream_writer kwarg); pin below that
+# for the test env only. custom_components/maultenance/manifest.json has
+# no aiohttp requirement at all since HA core supplies it at runtime.
+aiohttp<3.11
+aioresponses
