@@ -1,8 +1,7 @@
-pytest
-pytest-asyncio
-# aioresponses 0.7.9 (latest) doesn't support aiohttp's ClientResponse
-# signature from 3.11+ (new required stream_writer kwarg); pin below that
-# for the test env only. custom_components/maultenance/manifest.json has
-# no aiohttp requirement at all since HA core supplies it at runtime.
-aiohttp<3.11
-aioresponses
+# Test dependencies. Requires Python 3.14+ (matches current homeassistant
+# core's requires-python). Every test, including api.py's, runs through this
+# harness: importing anything under custom_components.maultenance always
+# executes __init__.py first, which needs homeassistant, so there's no
+# meaningful way to test api.py in a lighter environment.
+homeassistant
+pytest-homeassistant-custom-component
