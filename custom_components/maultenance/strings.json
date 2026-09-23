@@ -7,8 +7,8 @@
           "api_token": "Personal Access Token"
         },
         "data_description": {
-          "base_url": "e.g. http://maultenance.local:8080",
-          "api_token": "Created via POST /api/v1/tokens (or the web UI), for a dedicated Home Assistant account"
+          "base_url": "The full base URL of your mAultenance server, including scheme and port",
+          "api_token": "A personal access token created via the mAultenance web UI, for a dedicated Home Assistant account"
         }
       },
       "reauth_confirm": {
