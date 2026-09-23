@@ -1,0 +1,30 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "base_url": "Base URL",
+          "api_token": "Personal Access Token"
+        },
+        "data_description": {
+          "base_url": "e.g. http://maultenance.local:8080",
+          "api_token": "Created via POST /api/v1/tokens (or the web UI), for a dedicated Home Assistant account"
+        }
+      },
+      "reauth_confirm": {
+        "data": {
+          "api_token": "Personal Access Token"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect. Check the base URL and that mAultenance is reachable from Home Assistant.",
+      "invalid_auth": "Invalid personal access token.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This mAultenance server is already configured.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  }
+}
