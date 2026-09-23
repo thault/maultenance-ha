@@ -16,7 +16,14 @@ jobs:
       - run: pip install -r requirements_test.txt
       - run: pytest tests/ -v
 
+  # hacs/action validates the repository's default branch via the GitHub
+  # API, not the current checkout - so it can't give a meaningful result on
+  # a feature-branch PR before that branch is merged. Full HACS
+  # publish-readiness (a public repo, home-assistant/brands submission)
+  # is tracked separately; this just catches local regressions once
+  # something's actually on main.
   hacs:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
