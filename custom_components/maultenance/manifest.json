@@ -1,0 +1,11 @@
+{
+  "domain": "maultenance",
+  "name": "mAultenance",
+  "codeowners": ["@thault"],
+  "config_flow": true,
+  "documentation": "https://github.com/thault/maultenance-ha",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/thault/maultenance-ha/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
