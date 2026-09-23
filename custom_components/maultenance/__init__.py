@@ -10,7 +10,7 @@ from .api import MaultenanceApiClient
 from .const import CONF_API_TOKEN, CONF_BASE_URL
 from .coordinator import MaultenanceConfigEntry, MaultenanceDataUpdateCoordinator
 
-PLATFORMS: list[Platform] = [Platform.SENSOR, Platform.BINARY_SENSOR]
+PLATFORMS: list[Platform] = [Platform.TODO, Platform.SENSOR, Platform.BINARY_SENSOR]
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: MaultenanceConfigEntry) -> bool:
