@@ -7,7 +7,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
 from .api import MaultenanceApiClient
-from .const import CONF_API_TOKEN, CONF_BASE_URL
+from .const import CONF_API_TOKEN, CONF_BASE_URL, LOGGER
 from .coordinator import MaultenanceConfigEntry, MaultenanceDataUpdateCoordinator
 
 PLATFORMS: list[Platform] = [Platform.TODO, Platform.SENSOR, Platform.BINARY_SENSOR]
@@ -15,6 +15,7 @@ PLATFORMS: list[Platform] = [Platform.TODO, Platform.SENSOR, Platform.BINARY_SEN
 
 async def async_setup_entry(hass: HomeAssistant, entry: MaultenanceConfigEntry) -> bool:
     """Set up mAultenance from a config entry."""
+    LOGGER.debug("Setting up mAultenance for %s", entry.data[CONF_BASE_URL])
     client = MaultenanceApiClient(
         entry.data[CONF_BASE_URL],
         entry.data[CONF_API_TOKEN],
@@ -30,4 +31,5 @@ async def async_setup_entry(hass: HomeAssistant, entry: MaultenanceConfigEntry) 
 
 async def async_unload_entry(hass: HomeAssistant, entry: MaultenanceConfigEntry) -> bool:
     """Unload a config entry."""
+    LOGGER.debug("Unloading mAultenance for %s", entry.data[CONF_BASE_URL])
     return await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
